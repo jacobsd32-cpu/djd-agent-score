@@ -26,7 +26,7 @@
   "author": "Drew Jacobs <drewjacobs32@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/drewjacobs32/djd-agent-score.git"
+    "url": "git+https://github.com/jacobsd32-cpu/djd-agent-score.git"
   },
   "scripts": {
     "build": "npm run build:esm && npm run build:cjs && npm run build:types",
