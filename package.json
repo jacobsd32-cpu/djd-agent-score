@@ -1,0 +1,60 @@
+{
+  "name": "djd-agent-score",
+  "version": "1.0.0",
+  "description": "TypeScript SDK for DJD Agent Score — reputation scoring for AI agent wallets on Base",
+  "type": "module",
+  "main": "./dist/cjs/index.cjs",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/types/index.d.ts",
+        "default": "./dist/esm/index.js"
+      },
+      "require": {
+        "types": "./dist/types/index.d.cts",
+        "default": "./dist/cjs/index.cjs"
+      }
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "author": "Drew Jacobs <drewjacobs32@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/drewjacobs32/djd-agent-score.git"
+  },
+  "scripts": {
+    "build": "npm run build:esm && npm run build:cjs && npm run build:types",
+    "build:esm": "tsc -p tsconfig.esm.json",
+    "build:cjs": "tsc -p tsconfig.cjs.json && node scripts/rename-cjs.js",
+    "build:types": "tsc -p tsconfig.types.json && node scripts/copy-dcts.js",
+    "clean": "rm -rf dist",
+    "test": "node --test tests/client.test.js tests/helpers.test.js",
+    "prepublishOnly": "npm run clean && npm run build"
+  },
+  "keywords": [
+    "x402",
+    "base",
+    "agent",
+    "reputation",
+    "trust",
+    "score",
+    "wallet",
+    "blockchain",
+    "ai-agents",
+    "mcp"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.2",
+    "@types/node": "^22.10.0"
+  }
+}
