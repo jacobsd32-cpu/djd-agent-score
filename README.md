@@ -2,6 +2,9 @@
 
 TypeScript SDK for the [DJD Agent Score API](https://djd-agent-score.fly.dev) — reputation scoring for AI agent wallets on Base.
 
+[![Listed in the Coinbase x402 Ecosystem](https://img.shields.io/badge/Coinbase_x402-Ecosystem-0052FF?style=flat&logo=coinbase)](https://github.com/coinbase/x402)
+[![npm version](https://img.shields.io/npm/v/djd-agent-score)](https://www.npmjs.com/package/djd-agent-score)
+
 - Zero runtime dependencies (uses native `fetch`)
 - Dual ESM / CommonJS builds
 - Full TypeScript types
