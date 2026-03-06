@@ -81,19 +81,6 @@ const svg = await client.getBadge("0xABC...");
 // "<svg ...>...</svg>"
 ```
 
-#### `reportFraud(wallet, reason, txHashes?): Promise<FraudReportResponse>`
-
-Submit a fraud report.
-
-```ts
-const res = await client.reportFraud(
-  "0xABC...",
-  "Rug-pulled liquidity pool",
-  ["0xtx1...", "0xtx2..."],
-);
-// { success, message, reportId }
-```
-
 #### `registerAgent(wallet, name, description, githubUrl?): Promise<RegisterAgentResponse>`
 
 Register a new agent wallet.
@@ -120,6 +107,19 @@ const res = await client.healthCheck();
 ### Paid Endpoints (x402)
 
 These endpoints require an x402 micropayment. Without one they throw `PaymentRequiredError`.
+
+#### `reportFraud(wallet, reason, txHashes?): Promise<FraudReportResponse>`
+
+Submit a fraud report. Costs $0.02 USDC via x402.
+
+```ts
+const res = await client.reportFraud(
+  "0xABC...",
+  "Rug-pulled liquidity pool",
+  ["0xtx1...", "0xtx2..."],
+);
+// { success, message, reportId }
+```
 
 #### `getFullScore(wallet: string): Promise<FullScoreResponse>`
 
