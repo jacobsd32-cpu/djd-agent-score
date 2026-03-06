@@ -65,6 +65,7 @@ export interface BlacklistResponse {
   reports: Array<{
     reportId: string;
     reason: string;
+    txHashes?: string[];
     createdAt: string;
   }>;
 }
