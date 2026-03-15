@@ -13,6 +13,7 @@ import type {
   LeaderboardResponse,
   RegisterAgentResponse,
   HealthResponse,
+  CertificationStatusResponse,
   GateResult,
   GateReason,
 } from "./types.js";
@@ -308,4 +309,16 @@ export class AgentScoreClient {
       wallet: data.wallet,
     };
   }
+  /**
+   * Get the certification status for a wallet.
+   * Returns tier, certification date, expiry, and validity.
+   * Paid endpoint — may throw `PaymentRequiredError`.
+   */
+  async getCertificationStatus(wallet: string): Promise<CertificationStatusResponse> {
+    return this._request(
+      "GET",
+      `/v1/certification/${encodeURIComponent(wallet)}`,
+    );
+  }
+
 }

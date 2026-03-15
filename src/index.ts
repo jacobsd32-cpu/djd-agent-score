@@ -16,6 +16,7 @@ export type {
   LeaderboardResponse,
   RegisterAgentResponse,
   HealthResponse,
+  CertificationStatusResponse,
   GateReason,
   GateResult,
 } from "./types.js";

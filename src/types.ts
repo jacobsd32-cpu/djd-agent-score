@@ -98,6 +98,17 @@ export interface RegisterAgentResponse {
   initialScore: number;
 }
 
+// ── Certification ────────────────────────────────────────────────────
+
+export interface CertificationStatusResponse {
+  wallet: string;
+  tier: string;
+  score_at_certification: number;
+  granted_at: string;
+  expires_at: string;
+  is_valid: boolean;
+}
+
 // ── Health ────────────────────────────────────────────────────────────
 
 export interface HealthResponse {
